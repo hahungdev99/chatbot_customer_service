@@ -1,0 +1,13 @@
+# enviroment
+.env
+
+# certificate
+ca-certificates.crt
+
+# llm models for embedding
+bkai-foundation-models/
+keepitreal
+vinai
+
+# note
+note

@@ -1,0 +1,11 @@
+pandas
+numpy
+requests
+streamlit
+pymongo
+sentence_transformers
+rank-bm25
+scikit-learn
+google
+google-generativeai
+

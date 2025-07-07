@@ -1,0 +1,6 @@
+Endpoint embedding
+https://aiml-genai-openai.openai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-05-15
+
+Endpoint GPT4
+https://aiml-genai-openai.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview
+

@@ -1,0 +1,5 @@
+run backend server
+python app.py
+
+run frontend
+streamlit run web_frontend.py
