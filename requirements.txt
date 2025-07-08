@@ -8,4 +8,4 @@ rank-bm25
 scikit-learn
 google
 google-generativeai
-
+pyvi

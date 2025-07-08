@@ -18,8 +18,8 @@ pd.set_option('display.width', 1000)         # Set display width for better read
 
 
 # === Load model ===
-MODEL_NAME = "bkai-foundation-models/vietnamese-bi-encoder"
-LOCAL_MODEL_PATH = "bkai-foundation-models/vietnamese-bi-encoder"
+MODEL_NAME = "dangvantuan/vietnamese-embedding"
+LOCAL_MODEL_PATH = "dangvantuan/vietnamese-embedding"
 
 def load_or_download_model():
     """
@@ -141,31 +141,31 @@ def search_similar_products_sbert(column_name, query: str, top_k=5):
     return results[["information_product"]]
 
 
-# if __name__ == "__main__":
-#     # # Embedding data
-#     # input_file_path = "datasets/products_embedding_sbert.csv"
-#     # output_file_path = "datasets/products_embedding_sbert.csv"
-#     # column_name = "column_name"
-#     # embed_data(input_file_path, output_file_path, column_name)
+if __name__ == "__main__":
+    # Embedding data
+    input_file_path = "datasets/products_embedding_sbert.csv"
+    output_file_path = "datasets/products_embedding_sbert.csv"
+    column_name = "column_name"
+    embed_data(input_file_path, output_file_path, column_name)
 
-#     # # Test embedding
-#     # query_vec = encode("hello ")[0]
-#     # print('😂 ', query_vec.shape)
+    # Test embedding
+    query_vec = encode("hello ")[0]
+    print('😂 ', query_vec.shape)
 
 
-#     # User input query
-#     user_input = "giày da nam"
-#     column_name = "name"
-#     # Search for similar products
-#     top_results = search_similar_products_sbert(column_name=column_name, query= user_input, top_k=5)
-#     # print("👌 top_results ", top_results )
+    # User input query
+    user_input = "giày da nam"
+    column_name = "name"
+    # Search for similar products
+    top_results = search_similar_products_sbert(column_name=column_name, query= user_input, top_k=5)
+    # print("👌 top_results ", top_results )
 
-#     # Print results
-#     # print(f"\n🔎 Kết quả cho truy vấn: \"{user_input}\"\n")
-#     for i, row in top_results.iterrows():
-#         # print(f"👟 {row['name']} - Giá: {int(row['price']):,} VND - Similarity: {row['similarity']:.4f}")
-#         print(f"📝 {row['information_product'][:100]}...")
-#         # print(f"🔗 {row['url']}\n")
+    # Print results
+    # print(f"\n🔎 Kết quả cho truy vấn: \"{user_input}\"\n")
+    for i, row in top_results.iterrows():
+        # print(f"👟 {row['name']} - Giá: {int(row['price']):,} VND - Similarity: {row['similarity']:.4f}")
+        print(f"📝 {row['information_product'][:100]}...")
+        # print(f"🔗 {row['url']}\n")
 
-#     # # Save results to a temporary CSV file
-#     # top_results.to_csv("temp.csv", index=False)
+    # # Save results to a temporary CSV file
+    # top_results.to_csv("temp.csv", index=False)

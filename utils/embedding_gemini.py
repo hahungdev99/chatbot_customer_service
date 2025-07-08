@@ -144,37 +144,37 @@ def search_similar_products_gemini(column_name, query: str, top_k=5):
     return results[["information_product"]]
 
 
-# if __name__ == "__main__":
-#     # # Specify the column to embed (e.g., "name")
-#     # input_file_path = "datasets/products_embedding_gemini.csv"  
-#     # output_file_path = "datasets/products_embedding_gemini.csv"  
-#     # column_to_embed = "information_product"
-#     # # Process the CSV file
-#     # embed_data(input_file_path, output_file_path, column_to_embed)
+if __name__ == "__main__":
+    # # Specify the column to embed (e.g., "name")
+    # input_file_path = "datasets/products_embedding_gemini.csv"  
+    # output_file_path = "datasets/products_embedding_gemini.csv"  
+    # column_to_embed = "information_product"
+    # # Process the CSV file
+    # embed_data(input_file_path, output_file_path, column_to_embed)
     
-#     # # Test embedding 
-#     # query_vec = get_embedding("hello ")
-#     # print("😂 ", np.array(query_vec).shape)
+    # # Test embedding 
+    # query_vec = get_embedding("hello ")
+    # print("😂 ", np.array(query_vec).shape)
 
 
-#     # User input query
-#     # user_input = "dạo này tôi thấy mẫu BQ GT 846 đang hot, shop còn hàng ko vậy"
-#     # user_input = "tôi muốn mua giày da nam để mang đi làm, shop tư vấn cho tôi vài mẫu thử xem "
-#     user_input = "giày nam da"
-#     column_name = "name"
-#     # system_prompt_test = get_infor_product_from_query(user_input)
-#     # new_user_input = generate_gemini(system_prompt_test, user_input)
-#     # print("😂 user query ", new_user_input)
-#     # Search for similar products
+    # User input query
+    # user_input = "dạo này tôi thấy mẫu BQ GT 846 đang hot, shop còn hàng ko vậy"
+    # user_input = "tôi muốn mua giày da nam để mang đi làm, shop tư vấn cho tôi vài mẫu thử xem "
+    user_input = "giày nam da"
+    column_name = "name"
+    # system_prompt_test = get_infor_product_from_query(user_input)
+    # new_user_input = generate_gemini(system_prompt_test, user_input)
+    # print("😂 user query ", new_user_input)
+    # Search for similar products
 
-#     top_results = search_similar_products_gemini(column_name=column_name, query= user_input, top_k=5)
+    top_results = search_similar_products_gemini(column_name=column_name, query= user_input, top_k=5)
 
-#     # Print results
-#     # print(f"\n🔎 Kết quả cho truy vấn: \"{user_input}\"\n")
-#     for i, row in top_results.iterrows():
-#         # print(f"👟 {row['name']} - Giá: {int(row['price']):,} VND - Similarity: {row['similarity']:.4f}")
-#         print(f"📝 {row['information_product'][:100]}...")
-#         # print(f"🔗 {row['url']}\n")
+    # Print results
+    # print(f"\n🔎 Kết quả cho truy vấn: \"{user_input}\"\n")
+    for i, row in top_results.iterrows():
+        # print(f"👟 {row['name']} - Giá: {int(row['price']):,} VND - Similarity: {row['similarity']:.4f}")
+        print(f"📝 {row['information_product'][:100]}...")
+        # print(f"🔗 {row['url']}\n")
 
-#     # # Save results to a temporary CSV file
-#     # top_results.to_csv("temp.csv", index=False)
+    # # Save results to a temporary CSV file
+    # top_results.to_csv("temp.csv", index=False)

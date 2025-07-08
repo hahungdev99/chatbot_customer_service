@@ -6,6 +6,7 @@ import traceback
 from google import genai
 from utils.init_system_prompt import *
 from utils.util import classify_intent_gemini, classify_intent_history_gemini
+from utils.embedding_vnembedding import search_similar_products_vnembedding, search_similar_products_vnembedding_mongodb
 # from utils.embedding_sbert import search_similar_products_sbert
 from utils.embedding_gemini import search_similar_products_gemini
 from utils.llm import generate_gemini
@@ -86,7 +87,7 @@ def chat():
                 product_infor = generate_gemini(system_prompt_tmp, latest_query)
                 print("👌 user query -> product infor : ", product_infor)
 
-                result_search = search_similar_products_gemini(column_name="name", query= product_infor, top_k=5)
+                result_search = search_similar_products_vnembedding_mongodb(column_name="name", query= product_infor, top_k=5)
                 print("👌 result_search ", result_search)
                 system_prompt = anwswer_product_infor_prompt(latest_query, result_search)
 
